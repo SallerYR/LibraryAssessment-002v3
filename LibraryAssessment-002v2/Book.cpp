@@ -1,4 +1,7 @@
 #include "Book.h"
+#include <iomanip> // Including for setw and left manipulators - used in displayBookDetails 
+
+//TEST
 
 // Assign values to all book attributes
 void Book::setBookDetails(string t, string a, string i, bool av, string d)
@@ -13,11 +16,13 @@ void Book::setBookDetails(string t, string a, string i, bool av, string d)
 // Display one book's details
 void Book::displayBookDetails()
 {
-    cout << title << "\t\t"
-        << author << "\t\t"
-        << isbn << "\t\t"
-        << (availability ? "Available" : "Borrowed") << "\t\t"
-        << dateAdded << endl;
+    cout << left
+        << setw(20) << title
+        << setw(20) << author
+        << setw(10) << isbn
+        << setw(15) << (availability ? "Available" : "Borrowed")
+        << setw(15) << dateAdded
+        << endl;
 }
 
 // Borrow the book only if it is available
@@ -48,5 +53,5 @@ bool Book::isAvailable()
 {
     return availability;
 }
-
-// Test mert
+// t    
+// lol
